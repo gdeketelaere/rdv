@@ -1,6 +1,6 @@
-# Webpack ES6+ Sass Boilerplate [![devDependency Status](https://david-dm.org/vadimmarkov/webpack-es6-sass-boilerplate/dev-status.svg)](https://david-dm.org/vadimmarkov/webpack-es6-sass-boilerplate/?type=dev) [![Known Vulnerabilities](https://snyk.io/test/github/vadimmarkov/webpack-es6-sass-boilerplate/badge.svg)](https://snyk.io//test/github/vadimmarkov/webpack-es6-sass-boilerplate)
+# Rendez vous app
 
-A minimalistic webpack 4 based boilerplate for building web apps.
+A Rendez vous app to profile users
 
 ## What’s included?
 
