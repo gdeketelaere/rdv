@@ -1,0 +1,13 @@
+.hidden {
+  display: none;
+}
+
+.spacer {
+  margin-top: 2rem;
+  &--large {
+    margin-top: 6rem;
+  }
+  &--medium {
+    margin-top: 4rem;
+  }
+}

@@ -1,167 +1,156 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Rendez-vous.be</title>
+    <meta name="description" content="A profile form for Rendez-vous.be" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-  <meta charset="utf-8" />
-  <title>Rendez-vous.be</title>
-  <meta name="description" content="A profile form for Rendez-vous.be" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="favicon.ico" />
 
-  <link rel="shortcut icon" href="favicon.ico" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Rendez-vous.be" />
+    <meta property="og:description" content="A profile form for Rendez-vous.be" />
+    <meta property="og:image" content="" />
 
-  <!-- You can use open graph tags to customize link previews.
-        Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-  <meta property="og:url" content="" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Rendez-vous.be" />
-  <meta property="og:description" content="A profile form for Rendez-vous.be" />
-  <meta property="og:image" content="" />
+    <meta name="theme-color" content="#fafafa" />
+  </head>
 
-  <meta name="theme-color" content="#fafafa" />
-</head>
-
-<body>
-  <form action="creeprof_funnel.cfm" method="POST">
-    <center>
+  <body>
+    <form action="creeprof_funnel.cfm" method="POST">
       <div id="divStep_0" class="pageCenter">
         <h1>Bienvenue sur Rendez-Vous.be</h1>
 
         <h2>On voudrait en savoir un peu plus sur vous...</h2>
 
         <p>Vous pourrez compléter votre profil de manière approfondie par après.</p>
-        <p>Plus vous vous dévoilez et plus vous aurez des chances de rencontrer la personne qui vous correspond.</p>
+        <p>
+          Plus vous vous dévoilez et plus vous aurez des chances de rencontrer la personne qui vous
+          correspond.
+        </p>
 
-        <button type="button" onClick="showStep(); return false;">C’est parti !</button>
+        <a class="spacer--large" href="javascript:showStep();">C’est parti !</a>
       </div>
 
-      <div id="divStep_1" class="pageCenter hidden">
+      <div id="divStep_1" class="pageCenter" style="display:none;">
         <h1>Quel est votre statut marital ?</h1>
 
-        <input type="radio" name="etatCivil" value="2">
-        marié(e)<br>
+        <input type="radio" name="etatCivil" value="2" />
+        marié(e)<br />
 
-        <input type="radio" name="etatCivil" value="5">
-        concubinage<br>
+        <input type="radio" name="etatCivil" value="5" />
+        concubinage<br />
 
-        <input type="radio" name="etatCivil" value="7">
-        petit ami(e)<br>
+        <input type="radio" name="etatCivil" value="7" />
+        petit ami(e)<br />
 
-        <input type="radio" name="etatCivil" value="3">
-        divorcé(e)<br>
+        <input type="radio" name="etatCivil" value="3" />
+        divorcé(e)<br />
 
-        <input type="radio" name="etatCivil" value="4">
-        veuf(ve)<br>
+        <input type="radio" name="etatCivil" value="4" />
+        veuf(ve)<br />
 
-        <input type="radio" name="etatCivil" value="6">
-        séparé(e)<br>
+        <input type="radio" name="etatCivil" value="6" />
+        séparé(e)<br />
 
-        <input type="radio" name="etatCivil" value="1">
-        célibataire<br>
+        <input type="radio" name="etatCivil" value="1" />
+        célibataire<br />
 
-        <br><br>
+        <br /><br />
         <a href="javascript:validate(1, {name:'etatCivil'});">Valider</a>
       </div>
 
-      <div id="divStep_2" class="pageCenter hidden">
+      <div id="divStep_2" class="pageCenter" style="display:none;">
         <h1>Comment vous décririez-vous physiquement ?</h1>
 
+        <input type="radio" name="corpulence" value="mince" />
+        mince<br />
 
-        <input type="radio" name="corpulence" value="mince">
-        mince<br>
+        <input type="radio" name="corpulence" value="quelques kilos en trop" />
+        quelques kilos en trop<br />
 
-        <input type="radio" name="corpulence" value="quelques kilos en trop">
-        quelques kilos en trop<br>
+        <input type="radio" name="corpulence" value="sportif" />
+        sportif<br />
 
-        <input type="radio" name="corpulence" value="sportif">
-        sportif<br>
+        <input type="radio" name="corpulence" value="normal" />
+        normal<br />
 
-        <input type="radio" name="corpulence" value="normal">
-        normal<br>
+        <input type="radio" name="corpulence" value="autre" />
+        autre<br />
 
-        <input type="radio" name="corpulence" value="autre">
-        autre<br>
+        <input type="radio" name="corpulence" value="rond" />
+        rond<br />
 
-        <input type="radio" name="corpulence" value="rond">
-        rond<br>
-
-        <br><br>
+        <br /><br />
         <a href="javascript:validate(2, {name:'corpulence'});">Valider</a>
-
       </div>
 
-      <div id="divStep_3" class="pageCenter hidden">
-
+      <div id="divStep_3" class="pageCenter" style="display:none;">
         <h1>Quelle est votre taille ?</h1>
         <p>La beauté du cœur certes, certes... Néanmoins ;)</p>
-        <input type="text" name="taille" value="" maxlength="3"> cm
+        <input type="text" name="taille" value="" maxlength="3" /> cm
         <h1>Oserait-on ? Votre poids ?</h1>
-        <input type="text" name="poids" value="" maxlength="3"> kg
+        <input type="text" name="poids" value="" maxlength="3" /> kg
         <p>J’y travaille, laissez-moi un peu de temps pour répondre ;)</p>
 
-        <br><br>
+        <br /><br />
         <a href="javascript:validate(3);">Valider</a>
-
       </div>
 
-      <div id="divStep_4" class="pageCenter hidden">
-
+      <div id="divStep_4" class="pageCenter" style="display:none;">
         <h1>Avez-vous des enfants ?</h1>
-        <input type="radio" name="enfant" value="Y">
+        <input type="radio" name="enfant" value="Y" />
         Oui
-        <input type="radio" name="enfant" value="N">
+        <input type="radio" name="enfant" value="N" />
         Non
 
         <h1>Souhaitez-vous encore des enfants ?</h1>
-        <input type="radio" name="veutenfants" value="Y">
+        <input type="radio" name="veutenfants" value="Y" />
         Oui
-        <input type="radio" name="veutenfants" value="N">
+        <input type="radio" name="veutenfants" value="N" />
         Non
-        <input type="radio" name="veutenfants" value="P" checked>
+        <input type="radio" name="veutenfants" value="P" checked />
         Je n’ai pas de préférence
 
-        <br><br>
+        <br /><br />
         <a href="javascript:validate(4, {name:'enfant'});">Valider</a>
-
       </div>
 
-      <div id="divStep_5" class="pageCenter hidden">
+      <div id="divStep_5" class="pageCenter" style="display:none;">
         <h1>Quel est votre niveau d’études ?</h1>
-        <input type="hidden" name="step" value="7">
+        <input type="hidden" name="step" value="7" />
 
-        <input type="radio" name="etude" value="7">
-        Professionnelles<br>
+        <input type="radio" name="etude" value="7" />
+        Professionnelles<br />
 
-        <input type="radio" name="etude" value="1">
-        Secondaires Techniques<br>
+        <input type="radio" name="etude" value="1" />
+        Secondaires Techniques<br />
 
-        <input type="radio" name="etude" value="2">
-        Secondaires Générales<br>
+        <input type="radio" name="etude" value="2" />
+        Secondaires Générales<br />
 
-        <input type="radio" name="etude" value="3">
-        Graduat<br>
+        <input type="radio" name="etude" value="3" />
+        Graduat<br />
 
-        <input type="radio" name="etude" value="4">
-        Supérieures non universitaires<br>
+        <input type="radio" name="etude" value="4" />
+        Supérieures non universitaires<br />
 
-        <input type="radio" name="etude" value="5">
-        Supérieures universitaires<br>
+        <input type="radio" name="etude" value="5" />
+        Supérieures universitaires<br />
 
-        <input type="radio" name="etude" value="6">
-        Post universitaires<br>
+        <input type="radio" name="etude" value="6" />
+        Post universitaires<br />
 
-
-        <br><br>
+        <br /><br />
         <a href="javascript:validate(5, {name:'etude'});">Valider</a>
       </div>
 
-      <div id="divStep_6" class="pageCenter hidden">
+      <div id="divStep_6" class="pageCenter" style="display:none;">
         <h1>Quelle est votre nationalité ?</h1>
         <select name="nationalite">
-
-          <option value="1">
-
-          </option>
+          <option value="1"> </option>
 
           <option value="3">
             allemand
@@ -218,47 +207,46 @@
           <option value="10">
             suisse
           </option>
-
         </select>
 
-        <br><br>
+        <br /><br />
         <a href="javascript:validate(6, {name:'nationalite'});">Valider</a>
       </div>
 
-      <div id="divStep_7" class="pageCenter hidden">
+      <div id="divStep_7" class="pageCenter" style="display:none;">
         <h1>On arrive au bout, encore quelques informations de base avant de vous lancer...</h1>
         <p>
-          Dieu est un fumeur de havanes<br>
-          C'est lui-même qui m'a dit<br>
-          Que la fumée envoie au paradis<br>
+          Dieu est un fumeur de havanes<br />
+          C'est lui-même qui m'a dit<br />
+          Que la fumée envoie au paradis<br />
           Et vous ?
         </p>
 
         <h1>Fumez-vous ?</h1>
-        <input type="radio" name="fumeur" value="Y">
+        <input type="radio" name="fumeur" value="Y" />
         Oui
-        <input type="radio" name="fumeur" value="N">
+        <input type="radio" name="fumeur" value="N" />
         Non
-        <input type="radio" name="fumeur" value="P">
+        <input type="radio" name="fumeur" value="P" />
         Je le mentionnerai plus tard
 
-        <br><br>
+        <br /><br />
         <a href="javascript:validate(7, {name:'fumeur'});">Valider</a>
       </div>
 
-      <div id="divStep_8" class="pageCenter hidden">
+      <div id="divStep_8" class="pageCenter" style="display:none;">
         <h1>Votre idéal ? Quel est son âge ?</h1>
         De
-        <input type="text" name="agemin" maxlength="2">
+        <input type="text" name="agemin" maxlength="2" />
         à
-        <input type="text" name="agemax" maxlength="2">
+        <input type="text" name="agemax" maxlength="2" />
         ans
 
-        <br><br>
+        <br /><br />
         <a href="javascript:validate(8);">Valider</a>
       </div>
 
-      <div id="divStep_9" class="pageCenter hidden">
+      <div id="divStep_9" class="pageCenter" style="display:none;">
         <h1>Votre personnalité en un mot</h1>
         <p>C’est évidemment un raccourci mais cela reste une donnée importante sur vous</p>
 
@@ -340,7 +328,6 @@
           <option value="14">
             Tranquille
           </option>
-
         </select>
 
         <h1>Parlez-nous un peu de vous</h1>
@@ -348,11 +335,11 @@
 
         <textarea name="commentaire" cols="50" rows="4"></textarea>
 
-        <br><br>
+        <br /><br />
         <a href="javascript:validate(9);">Valider</a>
       </div>
 
-      <div id="divStep_10" class="pageCenter hidden">
+      <div id="divStep_10" class="pageCenter" style="display:none;">
         <h1>Un petit dernier pour la route et on y va !</h1>
         <h2>Quelle type de vacances aimez-vous ?</h2>
 
@@ -361,25 +348,26 @@
         <h2>Votre parfum préféré ?</h2>
         <textarea name="parfum" cols="50" rows="4"></textarea>
 
-        <br><br>
+        <br /><br />
         <a href="javascript:validate(10);">Valider</a>
       </div>
-  </form>
+    </form>
 
-  <div id="divStep_11" class="pageCenter hidden">
-    <h1>Félicitations Pseudo.</h1>
-    <h2>Prêt à vous lancer dans la cage aux lions ?</h2>
-    <a href="controlpanel.cfm">C'est parti !</a>
-    <h2>Aimez-vous les profils sans photos ?</h2>
-    <p>Eux non plus . Rajoutez une photo décuple vos chances de rencontres.</p>
-    <a href="myprofile_pictures.cfm">Ajouter ma photo</a>
-  </div>
-  <div id="divError" class="hidden">
-    <p style="color:#F00;">Alleeeeez répondez siouplé ;)</p>
-  </div>
-  <div id="divBack" class="pageBottom hidden">
-    <a href="javascript:showStep(currentStep -1);">BACK</a>
-  </div>
-</body>
+    <div id="divStep_11" class="pageCenter" style="display:none;">
+      <h1>Félicitations Pseudo.</h1>
+      <h2>Prêt à vous lancer dans la cage aux lions ?</h2>
+      <a href="controlpanel.cfm">C'est parti !</a>
+      <h2>Aimez-vous les profils sans photos ?</h2>
+      <p>Eux non plus . Rajoutez une photo décuple vos chances de rencontres.</p>
+      <a href="myprofile_pictures.cfm">Ajouter ma photo</a>
+    </div>
+    <div id="divError" style="display:none;">
+      <p style="color:#F00;">Alleeeeez répondez siouplé ;)</p>
+    </div>
+    <div id="divBack" class="pageBottom" style="display:none;">
+      <a href="javascript:showStep(currentStep -1);">BACK</a>
+    </div>
 
+    <br /><br /><br />
+  </body>
 </html>

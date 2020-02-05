@@ -2,10 +2,11 @@
 @import './base';
 @import './media';
 @import './fonts';
+@import './utils';
 
 // custom styles
 
-$orange-rdv: #FF9A01; 
+$orange-rdv: #ff9a01;
 
 html {
   height: 100%;
@@ -19,10 +20,11 @@ body {
   justify-content: center;
   min-height: 100%;
   background-color: #fff;
-  background-size:cover;
+  background-size: cover;
   background-position: center;
-  background-image: url(/src/images/background-rendezvous.jpg);
+  background-image: url(../images/background-rendezvous.jpg);
   font-size: 1.6rem;
+  text-align: center;
 }
 
 a {
@@ -38,7 +40,11 @@ a {
   }
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: 'helveticaneuethin';
   font-weight: 100;
 }
@@ -50,23 +56,23 @@ h1 {
 
 h2 {
   font-size: 2rem;
-  color: #FF9A01;
+  color: #ff9a01;
+  font-style: italic;
 }
 
 p {
   color: #fff;
-
+  margin: 0;
 }
 
-button {
+button,
+a {
   color: #fff;
   background-color: $orange-rdv;
-  border-radius:.4rem;
+  border-radius: 0.4rem;
   font-size: 1.8rem;
-  border:none;
+  border: none;
   padding: 1rem 4rem;
-}
-
-.hidden{
-  display: none;
+  text-decoration: none;
+  text-transform: uppercase;
 }
