@@ -1,0 +1,18 @@
+// A Hassle-Free Way to Self-Host Google Fonts - https://google-webfonts-helper.herokuapp.com/fonts
+
+@font-face {
+  font-display: fallback;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/Roboto-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'helveticaneuethin';
+  src: url('../fonts/helveticaneue_thin.woff2') format('woff2'),
+       url('../fonts/helveticaneue_thin.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
