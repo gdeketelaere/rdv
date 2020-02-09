@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Rendez-vous.be</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <meta name="description" content="A profile form for Rendez-vous.be" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -19,11 +20,34 @@
   </head>
 
   <body>
+    <nav class="timeline hidden">
+      <ul>
+        <li><img src="./images/ring.svg" /></li>
+
+        <li><img src="./images/balance.svg" /></li>
+
+        <li><img src="./images/taille.svg" /></li>
+
+        <li><img src="./images/kids.svg" /></li>
+
+        <li><img src="./images/education.svg" /></li>
+
+        <li><img src="./images/nationality.svg" /></li>
+
+        <li><img src="./images/smoking.svg" /></li>
+
+        <li><img src="./images/birthday.svg" /></li>
+
+        <li><img src="./images/personnality.svg" /></li>
+
+        <li><img src="./images/holydays.svg" /></li>
+      </ul>
+    </nav>
     <form action="creeprof_funnel.cfm" method="POST">
       <div id="divStep_0" class="pageCenter">
+        <img src="./images/logo-rdvous.svg" class="logo" />
         <h1>Bienvenue sur Rendez-Vous.be</h1>
-
-        <h2>On voudrait en savoir un peu plus sur vous...</h2>
+        <h2 class="orange">On voudrait en savoir un peu plus sur vous...</h2>
 
         <p>Vous pourrez compléter votre profil de manière approfondie par après.</p>
         <p>
@@ -36,338 +60,468 @@
 
       <div id="divStep_1" class="pageCenter" style="display:none;">
         <h1>Quel est votre statut marital ?</h1>
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="etatCivil" id="etatCivil_2" value="2" />
+          <label class="badg-check__label" for="etatCivil_2">
+            marié(e)
+          </label>
+        </div>
 
-        <input type="radio" name="etatCivil" value="2" />
-        marié(e)<br />
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="etatCivil" id="etatCivil_5" value="5" />
+          <label class="badg-check__label" for="etatCivil_5">
+            concubinage
+          </label>
+        </div>
 
-        <input type="radio" name="etatCivil" value="5" />
-        concubinage<br />
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="etatCivil" id="etatCivil_7" value="7" />
+          <label class="badg-check__label" for="etatCivil_7">petit ami(e) </label>
+        </div>
 
-        <input type="radio" name="etatCivil" value="7" />
-        petit ami(e)<br />
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="etatCivil" id="etatCivil_3" value="3" />
+          <label class="badg-check__label" for="etatCivil_3">divorcé(e) </label>
+        </div>
 
-        <input type="radio" name="etatCivil" value="3" />
-        divorcé(e)<br />
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="etatCivil" id="etatCivil_4" value="4" />
+          <label class="badg-check__label" for="etatCivil_4">veuf(ve) </label>
+        </div>
 
-        <input type="radio" name="etatCivil" value="4" />
-        veuf(ve)<br />
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="etatCivil" id="etatCivil_6" value="6" />
+          <label class="badg-check__label" for="etatCivil_6">séparé(e) </label>
+        </div>
 
-        <input type="radio" name="etatCivil" value="6" />
-        séparé(e)<br />
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="etatCivil" id="etatCivil_1" value="1" />
+          <label class="badg-check__label" for="etatCivil_1">célibataire </label>
+        </div>
 
-        <input type="radio" name="etatCivil" value="1" />
-        célibataire<br />
-
-        <br /><br />
-        <a href="javascript:validate(1, {name:'etatCivil'});">Valider</a>
+        <div class=" errorMessage hidden">
+          <p>Alleeeeez répondez siouplé ;)</p>
+        </div>
       </div>
 
       <div id="divStep_2" class="pageCenter" style="display:none;">
         <h1>Comment vous décririez-vous physiquement ?</h1>
 
-        <input type="radio" name="corpulence" value="mince" />
-        mince<br />
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="corpulence" id="mince" value="mince" />
+          <label class="badg-check__label" for="mince">mince</label>
+        </div>
 
-        <input type="radio" name="corpulence" value="quelques kilos en trop" />
-        quelques kilos en trop<br />
+        <div class="badg-check-container">
+          <input
+            class="badg-check"
+            type="radio"
+            name="corpulence"
+            id="kilo"
+            value="quelques kilos en trop"
+          />
+          <label class="badg-check__label" for="kilo">quelques kilos en trop</label>
+        </div>
 
-        <input type="radio" name="corpulence" value="sportif" />
-        sportif<br />
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="corpulence" id="sport" value="sportif" />
+          <label class="badg-check__label" for="sport">sportif</label>
+        </div>
 
-        <input type="radio" name="corpulence" value="normal" />
-        normal<br />
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="corpulence" id="normal" value="normal" />
+          <label class="badg-check__label" for="normal">normal</label>
+        </div>
 
-        <input type="radio" name="corpulence" value="autre" />
-        autre<br />
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="corpulence" id="autre" value="autre" />
+          <label class="badg-check__label" for="autre">autre</label>
+        </div>
 
-        <input type="radio" name="corpulence" value="rond" />
-        rond<br />
-
-        <br /><br />
-        <a href="javascript:validate(2, {name:'corpulence'});">Valider</a>
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="corpulence" id="rond" value="rond" />
+          <label class="badg-check__label" for="rond">rond</label>
+        </div>
+        <div class="errorMessage hidden">
+          <p>Alleeeeez répondez siouplé ;)</p>
+        </div>
       </div>
 
       <div id="divStep_3" class="pageCenter" style="display:none;">
         <h1>Quelle est votre taille ?</h1>
-        <p>La beauté du cœur certes, certes... Néanmoins ;)</p>
-        <input type="text" name="taille" value="" maxlength="3" /> cm
+        <p><i>La beauté du cœur certes, certes... Néanmoins ;)</i></p>
+        <input
+          autocomplete="off"
+          type="number"
+          name="taille"
+          value=""
+          maxlength="3"
+          class="input__medium"
+        /><span>cm</span> <br /><br />
         <h1>Oserait-on ? Votre poids ?</h1>
-        <input type="text" name="poids" value="" maxlength="3" /> kg
-        <p>J’y travaille, laissez-moi un peu de temps pour répondre ;)</p>
-
-        <br /><br />
-        <a href="javascript:validate(3);">Valider</a>
+        <input
+          autocomplete="off"
+          type="number"
+          name="poids"
+          value=""
+          maxlength="3"
+          class="input__medium"
+        /><span>kg</span> <br /><br />
+        <div
+          class="badg-check-container"
+          style="position: relative;
+        left: -.8rem;"
+        >
+          <input
+            class="badg-check"
+            type="radio"
+            name="corpulence-later"
+            id="poids-later"
+            value="rond"
+          />
+          <label class="badg-check__label" for="poids-later">Plus tard</label>
+        </div>
+        <!-- <p>J’y travaille, laissez-moi un peu de temps pour répondre ;)</p>-->
+        <div class="errorMessage hidden">
+          <p>Alleeeeez répondez siouplé ;)</p>
+        </div>
       </div>
 
       <div id="divStep_4" class="pageCenter" style="display:none;">
         <h1>Avez-vous des enfants ?</h1>
-        <input type="radio" name="enfant" value="Y" />
-        Oui
-        <input type="radio" name="enfant" value="N" />
-        Non
+
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="enfant" id="enfant-oui" value="Y" />
+          <label class="badg-check__label" for="enfant-oui">oui</label>
+        </div>
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="enfant" id="enfant-non" value="N" />
+          <label class="badg-check__label" for="enfant-non">non</label>
+        </div>
 
         <h1>Souhaitez-vous encore des enfants ?</h1>
-        <input type="radio" name="veutenfants" value="Y" />
-        Oui
-        <input type="radio" name="veutenfants" value="N" />
-        Non
-        <input type="radio" name="veutenfants" value="P" checked />
-        Je n’ai pas de préférence
-
-        <br /><br />
-        <a href="javascript:validate(4, {name:'enfant'});">Valider</a>
+        <div class="badg-check-container">
+          <input
+            class="badg-check"
+            type="radio"
+            name="veutenfants"
+            id="veutenfants-oui"
+            value="Y"
+          />
+          <label class="badg-check__label" for="veutenfants-oui">oui</label>
+        </div>
+        <div class="badg-check-container">
+          <input
+            class="badg-check"
+            type="radio"
+            name="veutenfants"
+            id="veutenfants-non"
+            value="N"
+          />
+          <label class="badg-check__label" for="veutenfants-non">non</label>
+        </div>
+        <div class="badg-check-container">
+          <input
+            class="badg-check"
+            type="radio"
+            name="veutenfants"
+            id="veutenfants-pref"
+            value="P"
+            checked
+          />
+          <label class="badg-check__label" for="veutenfants-pref">Je n’ai pas de préférence</label>
+        </div>
+        <div class=" errorMessage hidden">
+          <p>Alleeeeez répondez siouplé ;)</p>
+        </div>
       </div>
 
       <div id="divStep_5" class="pageCenter" style="display:none;">
         <h1>Quel est votre niveau d’études ?</h1>
         <input type="hidden" name="step" value="7" />
 
-        <input type="radio" name="etude" value="7" />
-        Professionnelles<br />
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="etude" id="etude-7" value="7" />
+          <label class="badg-check__label" for="etude-7">Professionnelles</label>
+        </div>
 
-        <input type="radio" name="etude" value="1" />
-        Secondaires Techniques<br />
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="etude" id="etude-1" value="1" />
+          <label class="badg-check__label" for="etude-1">Secondaires Techniques</label>
+        </div>
 
-        <input type="radio" name="etude" value="2" />
-        Secondaires Générales<br />
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="etude" id="etude-2" value="2" />
+          <label class="badg-check__label" for="etude-2">Secondaires Générales</label>
+        </div>
 
-        <input type="radio" name="etude" value="3" />
-        Graduat<br />
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="etude" id="etude-3" value="3" />
+          <label class="badg-check__label" for="etude-3">Graduat</label>
+        </div>
 
-        <input type="radio" name="etude" value="4" />
-        Supérieures non universitaires<br />
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="etude" id="etude-4" value="4" />
+          <label class="badg-check__label" for="etude-4">Supérieures non universitaires</label>
+        </div>
 
-        <input type="radio" name="etude" value="5" />
-        Supérieures universitaires<br />
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="etude" id="etude-5" value="5" />
+          <label class="badg-check__label" for="etude-5">Supérieures universitaires</label>
+        </div>
 
-        <input type="radio" name="etude" value="6" />
-        Post universitaires<br />
-
-        <br /><br />
-        <a href="javascript:validate(5, {name:'etude'});">Valider</a>
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="etude" id="etude-6" value="6" />
+          <label class="badg-check__label" for="etude-6">Post universitaires</label>
+        </div>
+        <div class=" errorMessage hidden">
+          <p>Alleeeeez répondez siouplé ;)</p>
+        </div>
       </div>
 
       <div id="divStep_6" class="pageCenter" style="display:none;">
         <h1>Quelle est votre nationalité ?</h1>
-        <select name="nationalite">
-          <option value="1"> </option>
+        <div class="select">
+          <select name="nationalite" id="slct">
+            <option value="1">Faites un choix</option>
 
-          <option value="3">
-            allemand
-          </option>
+            <option value="3">
+              allemand
+            </option>
 
-          <option value="12">
-            américain
-          </option>
+            <option value="12">
+              américain
+            </option>
 
-          <option value="9">
-            anglais
-          </option>
+            <option value="9">
+              anglais
+            </option>
 
-          <option value="14">
-            autre
-          </option>
+            <option value="14">
+              autre
+            </option>
 
-          <option value="15">
-            belge
-          </option>
+            <option value="15">
+              belge
+            </option>
 
-          <option value="13">
-            canadien
-          </option>
+            <option value="13">
+              canadien
+            </option>
 
-          <option value="6">
-            espagnol
-          </option>
+            <option value="6">
+              espagnol
+            </option>
 
-          <option value="2">
-            français
-          </option>
+            <option value="2">
+              français
+            </option>
 
-          <option value="8">
-            grec
-          </option>
+            <option value="8">
+              grec
+            </option>
 
-          <option value="4">
-            hollandais
-          </option>
+            <option value="4">
+              hollandais
+            </option>
 
-          <option value="5">
-            italien
-          </option>
+            <option value="5">
+              italien
+            </option>
 
-          <option value="11">
-            luxembourgeois
-          </option>
+            <option value="11">
+              luxembourgeois
+            </option>
 
-          <option value="7">
-            portugais
-          </option>
+            <option value="7">
+              portugais
+            </option>
 
-          <option value="10">
-            suisse
-          </option>
-        </select>
-
-        <br /><br />
-        <a href="javascript:validate(6, {name:'nationalite'});">Valider</a>
+            <option value="10">
+              suisse
+            </option>
+          </select>
+        </div>
+        <div class=" errorMessage hidden">
+          <p>Alleeeeez répondez siouplé ;)</p>
+        </div>
       </div>
 
       <div id="divStep_7" class="pageCenter" style="display:none;">
-        <h1>On arrive au bout, encore quelques informations de base avant de vous lancer...</h1>
-        <p>
-          Dieu est un fumeur de havanes<br />
-          C'est lui-même qui m'a dit<br />
-          Que la fumée envoie au paradis<br />
-          Et vous ?
+        <p>On arrive au bout, <br />encore quelques informations de base avant de vous lancer...</p>
+        <p class="orange">
+          <i>
+            Dieu est un fumeur de havanes<br />
+            C'est lui-même qui m'a dit<br />
+            Que la fumée envoie au paradis<br />
+            Et vous ?</i
+          >
         </p>
-
-        <h1>Fumez-vous ?</h1>
-        <input type="radio" name="fumeur" value="Y" />
-        Oui
-        <input type="radio" name="fumeur" value="N" />
-        Non
-        <input type="radio" name="fumeur" value="P" />
-        Je le mentionnerai plus tard
-
         <br /><br />
-        <a href="javascript:validate(7, {name:'fumeur'});">Valider</a>
+        <h1>Fumez-vous ?</h1>
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="fumeur" id="fumeur-Y" value="Y" />
+          <label class="badg-check__label" for="fumeur-Y">oui</label>
+        </div>
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="fumeur" id="fumeur-N" value="N" />
+          <label class="badg-check__label" for="fumeur-N">non</label>
+        </div>
+        <div class="badg-check-container">
+          <input class="badg-check" type="radio" name="fumeur" id="fumeur-P" value="P" />
+          <label class="badg-check__label" for="fumeur-P">Je le mentionnerai plus tard</label>
+        </div>
+        <div class=" errorMessage hidden">
+          <p>Alleeeeez répondez siouplé ;)</p>
+        </div>
       </div>
 
       <div id="divStep_8" class="pageCenter" style="display:none;">
         <h1>Votre idéal ? Quel est son âge ?</h1>
-        De
-        <input type="text" name="agemin" maxlength="2" />
-        à
-        <input type="text" name="agemax" maxlength="2" />
-        ans
-
-        <br /><br />
-        <a href="javascript:validate(8);">Valider</a>
+        <span>De</span>
+        <input type="number" autocomplete="off" name="agemin" maxlength="2" class="input__small" />
+        <span>à</span>
+        <input type="number" autocomplete="off" name="agemax" maxlength="2" class="input__small" />
+        <span>ans</span>
+        <div class=" errorMessage hidden">
+          <p>Alleeeeez répondez siouplé ;)</p>
+        </div>
       </div>
 
       <div id="divStep_9" class="pageCenter" style="display:none;">
         <h1>Votre personnalité en un mot</h1>
         <p>C’est évidemment un raccourci mais cela reste une donnée importante sur vous</p>
+        <br />
+        <div class="select">
+          <select name="caractere">
+            <option value="0">Faites un choix</option>
 
-        <select name="caractere">
-          <option value="0"></option>
+            <option value="12">
+              Cool
+            </option>
 
-          <option value="12">
-            Cool
-          </option>
+            <option value="19">
+              Cynique
+            </option>
 
-          <option value="19">
-            Cynique
-          </option>
+            <option value="17">
+              Excité
+            </option>
 
-          <option value="17">
-            Excité
-          </option>
+            <option value="15">
+              Extraverti
+            </option>
 
-          <option value="15">
-            Extraverti
-          </option>
+            <option value="20">
+              Généreux
+            </option>
 
-          <option value="20">
-            Généreux
-          </option>
+            <option value="18">
+              Idéaliste
+            </option>
 
-          <option value="18">
-            Idéaliste
-          </option>
+            <option value="21">
+              Intellectuel
+            </option>
 
-          <option value="21">
-            Intellectuel
-          </option>
+            <option value="16">
+              Introverti
+            </option>
 
-          <option value="16">
-            Introverti
-          </option>
+            <option value="8">
+              Leader
+            </option>
 
-          <option value="8">
-            Leader
-          </option>
+            <option value="22">
+              Maternant
+            </option>
 
-          <option value="22">
-            Maternant
-          </option>
+            <option value="13">
+              Mystique
+            </option>
 
-          <option value="13">
-            Mystique
-          </option>
+            <option value="1">
+              Non précisé
+            </option>
 
-          <option value="1">
-            Non précisé
-          </option>
+            <option value="3">
+              Optimiste
+            </option>
 
-          <option value="3">
-            Optimiste
-          </option>
+            <option value="2">
+              Passionné
+            </option>
 
-          <option value="2">
-            Passionné
-          </option>
+            <option value="7">
+              Rêveur
+            </option>
 
-          <option value="7">
-            Rêveur
-          </option>
+            <option value="23">
+              Sportif
+            </option>
 
-          <option value="23">
-            Sportif
-          </option>
+            <option value="9">
+              Stable
+            </option>
 
-          <option value="9">
-            Stable
-          </option>
+            <option value="5">
+              Terre à terre
+            </option>
 
-          <option value="5">
-            Terre à terre
-          </option>
-
-          <option value="14">
-            Tranquille
-          </option>
-        </select>
-
+            <option value="14">
+              Tranquille
+            </option>
+          </select>
+        </div>
+        <br /><br />
         <h1>Parlez-nous un peu de vous</h1>
         <p>Décrivez-vous ou parlez-nous de ce que vous recherchez</p>
 
         <textarea name="commentaire" cols="50" rows="4"></textarea>
-
-        <br /><br />
-        <a href="javascript:validate(9);">Valider</a>
+        <div class=" errorMessage hidden">
+          <p>Alleeeeez répondez siouplé ;)</p>
+        </div>
       </div>
 
       <div id="divStep_10" class="pageCenter" style="display:none;">
-        <h1>Un petit dernier pour la route et on y va !</h1>
-        <h2>Quelle type de vacances aimez-vous ?</h2>
+        <h2 class="orange">Un petit dernier pour la route et on y va !</h2>
+        <h1>Quelle type de vacances aimez-vous ?</h1>
 
         <textarea name="vacances" cols="50" rows="4"></textarea>
 
-        <h2>Votre parfum préféré ?</h2>
-        <textarea name="parfum" cols="50" rows="4"></textarea>
-
-        <br /><br />
-        <a href="javascript:validate(10);">Valider</a>
+        <h1>Votre parfum préféré ?</h1>
+        <input class="inputText" name="parfum" type="text" />
       </div>
     </form>
 
     <div id="divStep_11" class="pageCenter" style="display:none;">
-      <h1>Félicitations Pseudo.</h1>
-      <h2>Prêt à vous lancer dans la cage aux lions ?</h2>
-      <a href="controlpanel.cfm">C'est parti !</a>
-      <h2>Aimez-vous les profils sans photos ?</h2>
-      <p>Eux non plus . Rajoutez une photo décuple vos chances de rencontres.</p>
-      <a href="myprofile_pictures.cfm">Ajouter ma photo</a>
-    </div>
-    <div id="divError" style="display:none;">
-      <p style="color:#F00;">Alleeeeez répondez siouplé ;)</p>
-    </div>
-    <div id="divBack" class="pageBottom" style="display:none;">
-      <a href="javascript:showStep(currentStep -1);">BACK</a>
+      <img src="./images/success-circle.svg" class="success-circle" />
+      <h1 style="margin-bottom: .5rem">Félicitations Pseudo</h1>
+      <h2 style="margin-top: .5rem" class="orange no-italic">
+        Votre profil a été configuré avec succès !
+      </h2>
+      <div class="box-holder">
+        <div class="box-final lions">
+          <h2 class="no-italic">Prêt à vous lancer dans la cage aux lions ?</h2>
+          <img src="./images/lions.png" /><br />
+          <a class="btn-white" href="controlpanel.cfm">C'est parti !</a>
+        </div>
+        <div class="box-final photos">
+          <h2 class="no-italic">Aimez-vous les profils sans photos ? Eux non plus .</h2>
+          <p class="small">Rajoutez une photo décuple vos chances de rencontres.</p>
+          <img src="./images/upload-photo.png" /><br />
+          <a href="myprofile_pictures.cfm">Ajouter photo</a>
+        </div>
+      </div>
     </div>
 
-    <br /><br /><br />
+    <div class="nav__bottom hidden">
+      <a href="javascript:prevStep();" class="back-btn">BACK</a>
+      <a href="javascript:validate();">Valider</a>
+    </div>
   </body>
+  <script
+    crossorigin="anonymous"
+    src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2Ces2016%2Ces2017%2Ces2018%2Ces5%2Ces6"
+  ></script>
 </html>

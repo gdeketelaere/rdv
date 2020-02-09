@@ -11,3 +11,43 @@
     margin-top: 4rem;
   }
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  background-color: rgba(265, 265, 265, 0.3);
+  border: 0.1rem solid rgba(265, 265, 265, 0.5);
+  -webkit-text-fill-color: rgba(265, 265, 265, 0.3);
+}
+
+.pageCenter {
+  @media screen and (max-height: 500px) {
+    position: relative;
+    transform: translate(0, 0);
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+  }
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+.small {
+  font-size: 1.2rem;
+}
+
+.input__small {
+  width: 7rem;
+  padding: 1rem !important;
+}
+.input__medium {
+  width: 12rem;
+}
+
+.hidden {
+  display: none;
+}

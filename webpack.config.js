@@ -6,6 +6,9 @@ module.exports = (env, argv) => {
     throw new Error('You must pass an --mode flag into your build for webpack to work!');
   }
 
+  externals: {
+    jquery: 'jQuery';
+  }
   process.env.BABEL_ENV = argv.mode;
   process.env.NODE_ENV = argv.mode;
 

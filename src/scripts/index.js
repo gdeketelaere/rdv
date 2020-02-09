@@ -1,7 +1,7 @@
 // import { qs, qsa, $on, $delegate } from './utils';
 
 import '../stylesheets/style.scss';
-import $ from './jquery';
+import $ from 'jquery';
 
 $(document).ready(function() {
   $(function() {
@@ -9,7 +9,7 @@ $(document).ready(function() {
   });
 });
 
-var currentStep = 0;
+let currentStep = 0;
 
 history.pushState({ page: 'step' }, 'Step_' + currentStep, 'creeprof_funnel_ajax.cfm');
 
@@ -20,7 +20,24 @@ $(window).on('popstate', function(event) {
   }
 });
 
-const showStep = n => {
+const validations = [
+  { name: 'etatCivil' },
+  { name: 'corpulence' },
+  {},
+  { name: 'enfant' },
+  { name: 'etude' },
+  { name: 'nationalite' },
+  { name: 'fumeur' },
+  {},
+  {},
+  {},
+];
+
+function prevStep() {
+  showStep(currentStep - 1);
+}
+
+function showStep(n) {
   history.pushState({ page: 'step' }, 'Step_' + currentStep, 'creeprof_funnel_ajax.cfm');
 
   if (n == undefined) {
@@ -37,15 +54,23 @@ const showStep = n => {
   }
 
   if (n == 0 || n == 11) {
-    $('#divBack').fadeOut();
+    $('.back-btn').fadeOut();
+    $('.nav__bottom').fadeOut();
+    $('.timeline').fadeOut();
   } else {
-    $('#divBack').fadeIn();
+    $('.back-btn').fadeIn();
+    $('.nav__bottom').fadeIn();
+    $('.timeline').fadeIn();
   }
 
+  $('.timeline li').removeClass('active');
+  $(`.timeline li:nth-child(${n})`).addClass('active');
   currentStep = n;
-};
+}
 
-const validate = (step, param) => {
+const validate = () => {
+  var step = currentStep;
+  var param = validations[Number(step) - 1];
   var r = false;
   switch (step) {
     /* Radio */
@@ -68,6 +93,7 @@ const validate = (step, param) => {
         r = true;
         if (poids.length > 0) {
           if (poids >= 40 && poids <= 300) {
+            console.log('do nothing');
           } else {
             r = false;
           }
@@ -98,7 +124,6 @@ const validate = (step, param) => {
       var caractere = $("select[name='caractere']").val();
       var commentaire = $("textarea[name='commentaire']").val();
 
-      console.log(caractere, commentaire);
       if (caractere == 0) {
         r = false;
       }
@@ -114,10 +139,10 @@ const validate = (step, param) => {
   }
 
   if (r) {
-    $('#divError').fadeOut();
+    $('#divStep_' + currentStep + ' .errorMessage').slideUp();
     showStep();
   } else {
-    $('#divError').fadeIn();
+    $('#divStep_' + currentStep + ' .errorMessage').slideDown();
   }
 };
 
@@ -142,5 +167,6 @@ var validateSelect = function(el) {
 };
 
 window.showStep = showStep;
+window.prevStep = prevStep;
 window.validate = validate;
 window.currentStep = currentStep;
